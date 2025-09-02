@@ -1,0 +1,174 @@
+
+<section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              We present <span class="dnerf">CAMIA</span>, a novel approach for camera-aware image anonymization
+              that preserves privacy while maintaining utility for machine learning applications.
+            </p>
+            <p>
+              Our method addresses the critical challenge of protecting individual privacy in image datasets
+              while preserving the statistical properties necessary for effective machine learning model training.
+              CAMIA introduces camera-aware techniques that account for different camera characteristics and
+              imaging conditions when applying anonymization transformations.
+            </p>
+            <p>
+              By considering camera-specific properties, our approach ensures consistent anonymization quality
+              across diverse imaging scenarios while maintaining the underlying data distribution that is
+              crucial for machine learning performance. We demonstrate that <span class="dnerf">CAMIA</span>
+              achieves superior privacy protection compared to existing methods while preserving model accuracy
+              across various computer vision tasks.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+  
+  
+    </div>
+  </section>
+  
+  
+  <section class="section">
+    <div class="container is-max-desktop">
+  
+      <div class="columns is-centered">
+  
+        <!-- Privacy Protection. -->
+        <div class="column">
+          <div class="content">
+            <h2 class="title is-3">Privacy Protection</h2>
+            <p>
+              <i>CAMIA</i> provides robust privacy protection by applying camera-aware anonymization
+              techniques that adapt to different imaging conditions and camera characteristics.
+            </p>
+            <video id="privacy-demo" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/dollyzoom-stacked.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <!--/ Privacy Protection. -->
+  
+        <!-- Utility Preservation. -->
+        <div class="column">
+          <h2 class="title is-3">Utility Preservation</h2>
+          <div class="columns is-centered">
+            <div class="column content">
+              <p>
+                Our method preserves the statistical properties necessary for machine learning
+                while protecting individual privacy through intelligent anonymization.
+              </p>
+              <video id="utility-video" controls playsinline height="100%">
+                <source src="./static/videos/matting.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+      <!--/ Matting. -->
+  
+      <!-- Method Overview. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Method Overview</h2>
+  
+          <!-- Anonymization Process. -->
+          <h3 class="title is-4">Anonymization Process</h3>
+          <div class="content has-text-justified">
+            <p>
+              CAMIA applies camera-aware transformations to anonymize images while preserving
+              the essential features needed for machine learning. The slider demonstrates the
+              anonymization strength from original to fully anonymized.
+            </p>
+          </div>
+          <div class="columns is-vcentered interpolation-panel">
+            <div class="column is-3 has-text-centered">
+              <img src="./static/images/interpolate_start.jpg"
+                   class="interpolation-image"
+                   alt="Original image"/>
+              <p>Original</p>
+            </div>
+            <div class="column interpolation-video-column">
+              <div id="interpolation-image-wrapper">
+                Loading...
+              </div>
+              <input class="slider is-fullwidth is-large is-info"
+                     id="interpolation-slider"
+                     step="1" min="0" max="100" value="0" type="range">
+            </div>
+            <div class="column is-3 has-text-centered">
+              <img src="./static/images/interpolate_end.jpg"
+                   class="interpolation-image"
+                   alt="Anonymized image"/>
+              <p class="is-bold">Anonymized</p>
+            </div>
+          </div>
+          <br/>
+          <!--/ Anonymization Process. -->
+  
+          <!-- Camera Adaptation. -->
+          <h3 class="title is-4">Camera-aware Adaptation</h3>
+          <div class="content has-text-justified">
+            <p>
+              <span class="dnerf">CAMIA</span> adapts its anonymization strategy based on camera
+              characteristics, ensuring consistent privacy protection across different imaging conditions.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <video id="camera-adaptation-video"
+                   controls
+                   muted
+                   preload
+                   playsinline
+                   width="75%">
+              <source src="./static/videos/replay.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <!--/ Camera Adaptation. -->
+  
+        </div>
+      </div>
+      <!--/ Method Overview. -->
+  
+  
+      <!-- Concurrent Work. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Related Work</h2>
+  
+          <div class="content has-text-justified">
+            <p>
+              CAMIA builds upon extensive research in privacy-preserving machine learning and image anonymization.
+            </p>
+            <p>
+              Our work is related to differential privacy techniques that add noise to protect individual privacy
+              while maintaining statistical utility for machine learning applications.
+            </p>
+            <p>
+              Traditional image anonymization methods often apply uniform transformations without considering
+              camera-specific characteristics, which can lead to inconsistent privacy protection and utility preservation.
+            </p>
+            <p>
+              Recent advances in federated learning and privacy-preserving computer vision have highlighted the
+              need for more sophisticated anonymization techniques that can adapt to diverse imaging conditions.
+            </p>
+            <p>
+              CAMIA addresses these challenges by introducing camera-aware anonymization that provides robust
+              privacy protection while maintaining the data quality necessary for effective machine learning.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Concurrent Work. -->
+  
+    </div>
+  </section>
+  

@@ -1,5 +1,10 @@
 body {
   font-family: 'Noto Sans', sans-serif;
+  font-size: 16px; /* Adjust base font size */
+}
+
+p {
+  font-size: 18px; /* Larger font size for paragraphs */
 }
 
 
@@ -49,10 +54,13 @@ body {
 
 .publication-title {
     font-family: 'Google Sans', sans-serif;
+    font-size: 3rem; /* Adjust title size */
+    font-weight: 700; /* Make title bolder */
 }
 
 .publication-authors {
     font-family: 'Google Sans', sans-serif;
+    font-size: 1.1rem; /* Adjust author names size */
 }
 
 .publication-venue {
