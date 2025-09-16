@@ -127,6 +127,20 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full has-text-centered">
+        <video id="visualization-video" controls preload="metadata" style="max-width: 100%; height: auto;">
+          <source src="./static/vedio/Visualization.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
 <!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
@@ -199,15 +213,56 @@
     </div>
   </div>
 </section> -->
-<section>
+<section class="section">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <p>We propose <strong>CAMIA</strong> (<em>Context-Aware Membership Inference Attack</em>), a simple and effective method to infer if a large language model was pretrained on the given text.</p>
+    <div class="columns is-centered">
+        <div class="column is-five-sixths">
+          <p style="font-size: 18px; line-height: 1.6; margin-bottom: 1.5rem; font-style: italic; color: #555;">
+            We propose <strong>CAMIA</strong> (Context-Aware Membership Inference Attack), a simple and effective method to infer if a large language model was pretrained on the given text.
+          </p>
+          
+          <h2 style="font-size: 1.8rem; margin: 0 0 1rem; color:cornflowerblue; font-weight: 600;">Problem</h2>
+          <p style="font-size: 18px; line-height: 1.6; margin-bottom: 1.5rem;">
+            Large language models (LLMs) are known to memorize parts of their training data, raising concerns about privacy, copyright, and evaluation contamination. Membership Inference Attacks (MIAs) are designed to assess such memorization by testing whether a given data point was part of a model's training set. However, MIAs applied to pre-trained LLMs have been largely ineffective. A key reason is that most algorithms were originally developed for classification models and fail to capture the <strong>generative nature of LLMs</strong>. While classification models output a single prediction, LLMs generate text token by token, with each prediction shaped by the <strong>prefix</strong> that comes before it. Consequently, MIAs that simply aggregate outputs over an entire sequence miss the crucial token-level dynamics that underlie memorization in LLMs.
+          </p>
+
+          <h2 style="font-size: 1.8rem; margin: 0 0 1rem; color:cornflowerblue; font-weight: 600;">Key insight</h2>
+          <p style="font-size: 18px; line-height: 1.6; margin-bottom: 1.5rem;">
+            Our key insight is that memorization in LLMs is <strong>context dependent</strong>. 
+            <ul style="font-size: 18px; line-height: 1.6; margin: 0.5rem 0 1.5rem 1.25rem;">
+            <li>• When the prefix provides clear guidance, such as through repetition or overlap with the next tokens, the model can generalize without memorizing. 
+            <li>• When the prefix is ambiguous or complex, the model becomes uncertain, and in these cases it is more likely to rely on <strong>memorized sequences</strong> from training. 
+            </li>
+            </ul>
+            <br>
+            Thus, an effective MIA should explicitly account for how context shapes predictive uncertainty at the token level, rather than simply relying on overall sequence loss.
+          </p>
+
+          <h2 style="font-size: 1.8rem; margin: 1rem 0 1rem; color:cornflowerblue; font-weight: 600;">Our method: CAMIA</h2>
+          <p style="font-size: 18px; line-height: 1.6; margin-bottom: 1rem;">
+            We introduce a context aware MIA that analyzes how quickly a model moves from uncertainty to confident predictions as it generates text. CAMIA:
+          </p>
+          <ul style="font-size: 18px; line-height: 1.6; margin: 0.5rem 0 1.5rem 1.25rem;">
+            <li>• Measures the rate at which uncertainty is resolved across prefixes</li>
+            <li>• Adjusts for cases where uncertainty is artificially reduced by repetition</li>
+            <li>• Makes token level decisions rather than relying on a single static threshold</li>
+          </ul>
+
+          <h2 style="font-size: 1.8rem; margin: 0 0 1rem; color:cornflowerblue; font-weight: 600;">Results</h2>
+          <p style="font-size: 18px; line-height: 1.6; margin-bottom: 1.5rem;">
+            On the MIMIR benchmark, across Pythia and GPT Neo models and six domains, CAMIA consistently outperforms existing attacks. For example, when applied to Pythia 2.8B on the ArXiv dataset, it increases the true positive rate from <strong>20.11%</strong> to <strong>32.00%</strong> while keeping the false positive rate at <strong>1%</strong>.
+          </p>
+
+          <!-- <h2 style="font-size: 1.8rem; margin: 0 0 1rem; color:cornflowerblue; font-weight: 600;">Why it matters</h2>
+          <p style="font-size: 18px; line-height: 1.6; margin-bottom: 1.5rem;">
+            Our approach provides a sharper lens for auditing LLMs. By aligning with the token level dynamics of generation, CAMIA strengthens our ability to detect memorization, protect sensitive data, and uncover hidden contamination in evaluation benchmarks.
+          </p> -->
       </div>
     </div>
   </div>
 </section>
+
+
 
 
 <section class="section" id="BibTeX">
