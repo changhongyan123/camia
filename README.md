@@ -4,11 +4,11 @@ This is the repository that contains source code for the CAMIA website.
 
 If you find CAMIA useful for your work please cite:
 ```
-@article{chang2024camia,
-  author    = {Chang, Hongyan and Shamsabadi, Ali Shahin and Katevas, Kleomenis and Haddadi, Hamed and Shokri, Reza},
-  title     = {CAMIA: Camera-aware Image Anonymization},
-  journal   = {Under Review},
-  year      = {2024},
+@article{chang2024context,
+  title={Context-aware membership inference attacks against pre-trained large language models},
+  author={Chang, Hongyan and Shamsabadi, Ali Shahin and Katevas, Kleomenis and Haddadi, Hamed and Shokri, Reza},
+  booktitle={Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  year={2025}
 }
 ```
 
